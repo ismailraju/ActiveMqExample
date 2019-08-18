@@ -6,29 +6,29 @@ import javax.jms.Message;
 
 /**
  * 应答报文
- * 
+ *
  * @author zhaiyz
  */
 public class ReplyMessage {
-	
-	private Semaphore semaphore = new Semaphore(0);
-	
-	private Message message;
 
-	public Semaphore getSemaphore() {
-		return semaphore;
-	}
+    private Semaphore semaphore = new Semaphore(0);
 
-	public void setSemaphore(Semaphore semaphore) {
-		this.semaphore = semaphore;
-	}
+    private Message message;
 
-	public Message getMessage() {
-		return message;
-	}
+    public Semaphore getSemaphore() {
+        return semaphore;
+    }
 
-	public void setMessage(Message message) {
-		this.message = message;
-	}
+    public void setSemaphore(Semaphore semaphore) {
+        this.semaphore = semaphore;
+    }
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public void setMessage(Message message) {
+        this.message = message;
+    }
 
 }
