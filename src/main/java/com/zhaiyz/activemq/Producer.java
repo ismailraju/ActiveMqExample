@@ -46,7 +46,7 @@ public class Producer implements MessageListener {
      */
     public void setJmsTemplate(JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
-        this.jmsTemplate.setPriority(7);
+   
     }
 
     /**
@@ -78,11 +78,11 @@ public class Producer implements MessageListener {
     }
 
     public String sendMessage(final String message) {
-        jmsTemplate.setPriority(7);
+        
         ReplyMessage replyMessage = new ReplyMessage();
         final String correlationID = UUID.randomUUID().toString();
         concurrentMap.put(correlationID, replyMessage);
-        System.out.println("##################################" + jmsTemplate.getPriority());
+ 
         jmsTemplate.send(requestDestination, new MessageCreator() {
 
             @Override
